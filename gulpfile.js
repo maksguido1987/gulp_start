@@ -19,7 +19,7 @@ let { src, dest } = require('gulp'), // присваиваем переменн�
    newer = require('gulp-newer');
    
 
-let project_folder = 'dist'; // папка для выгрузки 
+let project_folder = require('path').basename(__dirname)
 let source_folder = '#src'; // папка с исходниками
 
 let path = {  // пути к файлам
