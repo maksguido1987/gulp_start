@@ -1,11 +1,2 @@
-body {
-  display: flex;
-}
-div {
-  display: grid;
-}
-
-.box {
-  display: grid;
-  transform: scale3d();
-}
+@import "mixin";
+@import "fonts";
