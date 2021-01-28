@@ -12,9 +12,6 @@ let { src, dest } = require('gulp'), // присваиваем переменн�
    uglify = require('gulp-uglify-es').default,
    babel = require('gulp-babel'),
    imagemin = require('gulp-imagemin'),
-   webp = require('gulp-webp'),
-   webphtml = require('gulp-webp-html'),
-   webpcss = require('gulp-webpcss'),
    svgsprite = require('gulp-svg-sprite'),
    ttf2woff = require('gulp-ttf2woff'),
    ttf2woff2 = require('gulp-ttf2woff2'),
@@ -63,7 +60,6 @@ function browserSync() {
 function html() {
    return src(path.src.html)
       .pipe(fileinclude())
-      .pipe(webphtml())
       .pipe(dest(path.build.html))
       .pipe(browsersync.stream())
 }
@@ -79,7 +75,6 @@ function css() {
          cascade: true,
          grid: true
       }))
-      .pipe(webpcss())
       .pipe(dest(path.build.css))
       .pipe(cleancss())
       .pipe(rename({extname: '.min.css'}))
@@ -102,9 +97,6 @@ function js() {
 function images() {
    return src(path.src.img)
       .pipe(newer(path.build.img))
-      .pipe(webp({
-         quality: 70
-      }))
       .pipe(dest(path.build.img))
       .pipe(src(path.src.img))
       .pipe(newer(path.build.img))
