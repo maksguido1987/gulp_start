@@ -1,4 +1,5 @@
-@@include('webp.js')
+@@include('dinamic.js')
+@@include('swiper.js')
 
 
 

@@ -1,7 +1,0 @@
-@charset "UTF-8";
-
-/* подключает шрифты к стилям */
-
-.font:hover {
-  color: red;
-}
